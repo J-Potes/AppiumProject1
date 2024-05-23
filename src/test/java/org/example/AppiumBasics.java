@@ -16,12 +16,13 @@ public class AppiumBasics {
 
         // Specify capabilities
         UiAutomator2Options options = new UiAutomator2Options();
-        options.setDeviceName("Pixel 4a API 33"); //Emulator
+        options.setDeviceName("emulator-5554"); //Emulator
+        options.setApp("D:\\Users\\ASUS\\Desktop\\Cursos\\3_Appium Mobile Automation\\AppiumProject1\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 
         // First create the object for Android Driver or iOS Driver
         // In this case Android Driver UiAutomator2
         // Appium code -> Appium Server -> Mobile
         // Parameters: ...new AndroidDriver( Appium server URL, Capabilities )
-        AndroidDriver driver = new AndroidDriver(new URI("https://127.0.0.1:4723").toURL(), options);
+        AndroidDriver driver = new AndroidDriver(new URI("http://192.168.0.11:4723/").toURL(), options);
     }
 }
