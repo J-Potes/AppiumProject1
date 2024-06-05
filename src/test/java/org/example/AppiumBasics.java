@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.testng.annotations.Test;
 
@@ -20,5 +21,9 @@ public class AppiumBasics extends BaseTest{
         // Actual automation
         // Xpath, id, accesibilityId, classname, androidUIAutomator
         driver.findElement(AppiumBy.accessibilityId("Preference")).click();
+        //driver.findElement(AppiumBy.accessibilityId("3. Preference dependencies")).click();
+        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"3. Preference dependencies\"]")).click();
+        driver.findElement(By.id("android:id/checkbox")).click();
+        driver.findElement(By.xpath("(//android.widget.RelativeLayout)[2]")).click();
     }
 }
