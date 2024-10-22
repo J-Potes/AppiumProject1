@@ -7,6 +7,7 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -33,6 +34,10 @@ public class AppiumBasics extends BaseTest{
 
         // Tap on Wifi Settings option
         driver.findElement(By.xpath("(//android.widget.RelativeLayout)[2]")).click();
+
+        // Verify that the modal title is correct
+        String alertTitle = driver.findElement(By.id("android:id/alertTitle")).getText();
+        Assert.assertEquals(alertTitle, "WiFi settings");
 
         // Tap on Wifi text field and send text
         driver.findElement(By.id("android:id/edit")).click();
