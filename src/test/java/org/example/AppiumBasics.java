@@ -20,10 +20,18 @@ public class AppiumBasics extends BaseTest{
     public void wifiSettingsName() throws MalformedURLException, URISyntaxException {
         // Actual automation
         // Xpath, id, accesibilityId, classname, androidUIAutomator
+
+        // Tap on Preference button
         driver.findElement(AppiumBy.accessibilityId("Preference")).click();
+
+        // Tap on 3. Preference dependencies
         //driver.findElement(AppiumBy.accessibilityId("3. Preference dependencies")).click();
         driver.findElement(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"3. Preference dependencies\"]")).click();
+
+        // Tap on checkbox
         driver.findElement(By.id("android:id/checkbox")).click();
+
+        // Tap on Wifi Settings option
         driver.findElement(By.xpath("(//android.widget.RelativeLayout)[2]")).click();
     }
 }
