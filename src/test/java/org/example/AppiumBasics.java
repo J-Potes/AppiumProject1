@@ -33,5 +33,12 @@ public class AppiumBasics extends BaseTest{
 
         // Tap on Wifi Settings option
         driver.findElement(By.xpath("(//android.widget.RelativeLayout)[2]")).click();
+
+        // Tap on Wifi text field and send text
+        driver.findElement(By.id("android:id/edit")).click();
+        driver.findElement(By.id("android:id/edit")).sendKeys("JJ Wifi");
+
+        // Tap on the OK button
+        driver.findElements(AppiumBy.className("android.widget.Button")).get(1).click();
     }
 }
